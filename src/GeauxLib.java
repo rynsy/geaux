@@ -131,64 +131,9 @@ public class GeauxLib{
 		}
 	} // checkBoolArrayLength
 
-	public static void main() {
-		int a[] = new int[100];
-		int z[] = new int[100];
-		a[1] = 1;
-		a[2] = 123;
-		int b[] = checkIntArrayLength(z,cloneIntArray(a));
-		b[1]=-1;
-		printInt(a[1]);
-		printChar(' ');
-		printInt(b[1]);
-		printChar(' ');
-		printInt(a[2]);
-		printChar(' ');
-		printInt(b[2]);
-		printChar('\n');
-		char aa[] = new char[100];
-		char zz[] = new char[100];
-		aa[1] = 'a';
-		aa[2] = 'A';
-		char bb[] = checkCharArrayLength(zz,cloneCharArray(aa));
-		bb[1]='z';
-		printChar(aa[1]);
-		printChar(' ');
-		printChar(bb[1]);
-		printChar(' ');
-		printChar(aa[2]);
-		printChar(' ');
-		printChar(bb[2]);
-		printChar('\n');
-		boolean aaa[] = new boolean[100];
-		boolean zzz[] = new boolean[100];
-		aaa[1] = true;
-		aaa[2] = true;
-		boolean bbb[] = checkBoolArrayLength(zzz,cloneBoolArray(aaa));
-		bbb[1]=false;
-		printBool(aaa[1]);
-		printChar(' ');
-		printBool(bbb[1]);
-		printChar(' ');
-		printBool(aaa[2]);
-		printChar(' ');
-		printBool(bbb[2]);
-		printChar('\n');
-		char qq[] = convertString("AbCdE");
-		printChar(qq[0]);
-		printChar(' ');
-		printChar(qq[1]);
-		printChar(' ');
-		printChar(qq[2]);
-		printChar(' ');
-		printChar(qq[3]);
-		printChar('\n');
-	} // main
-
 	public static void main(String args[]) {
-		main();
-	} // main
-
+	// main
+    }
 } // class GeauxLib
 
 class ArraySizeException extends RuntimeException {
