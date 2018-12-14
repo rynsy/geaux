@@ -1,21 +1,18 @@
 ##########################################
 ####
-# Makefile for project 3
-# Modified 2/2011 Raphael Finkel
-#
 # All classes are compiled into the ./classes directory
 #
 # The default is to make all .class files.
 #
 #    clean    -- removes all generated files
 #
-#    test     -- Tests proj5 by running P5.class with inputs test[123].csx_go
+#    test     -- Tests proj5 by running P5.class with inputs test[123].geaux
 #
 ###
 
 DESTPATH = ./classes
-COURSEDIR = /homes/raphael/courses/cs541/public
-CUPPATH = $(COURSEDIR)/cup
+COURSEDIR = C:/Users/rmli223.AD/bin/java/geaux
+CUPPATH = ../lib
 CLASSPATH = $(DESTPATH):$(CUPPATH)/java-cup-10k.jar
 JASMINPATH = $(CUPPATH)/cup.jar:$(CUPPATH)/jasmin-sable.jar
 VPATH = $(DESTPATH)
@@ -32,11 +29,10 @@ JASMINTEST = ../jasmin_tests/$(JASMINTESTNAME).j
 .PHONY: all 
 all: P5.class Yylex.class parser.class 
 
-# don't use CUP 0.11a; I couldn't get it to work right.  -- Raphael 2/2011
-sym.java parser.java: csx_go.cup 
-	java $(JFLAGS) java_cup/Main < csx_go.cup
-Yylex.java: csx_go.jlex
-	jflex csx_go.jlex
+sym.java parser.java: geaux.cup 
+	java $(JFLAGS) java_cup/Main < geaux.cup
+Yylex.java: geaux.jlex
+	jflex geaux.jlex
 parser.class: ASTNode.class Scanner.class SyntaxErrorException.class
 Yylex.class: sym.class 
 SymbolTable.class: Symb.class EmptySTException.class DuplicateException.class
@@ -48,21 +44,21 @@ P5.class: Yylex.class Scanner.class parser.class ASTNode.class
 
 jazz:
 	java -classpath $(JASMINPATH) jasmin.Main $(JASMINTEST)
-	java -classpath .:./classes $(JASMINTESTNAME)
+	java -classpath .;./classes $(JASMINTESTNAME)
 	@echo
 
 editjazz:
 	vim $(JASMINTEST)
 	@echo
 
-test: all CSXLib.class
-	java $(JFLAGS) P5 $(TESTDIR)/test-$(TESTNUM).csx_go
+test: all GeauxLib.class
+	java $(JFLAGS) Geaux $(TESTDIR)/test-$(TESTNUM).geaux
 	java -classpath $(JASMINPATH) jasmin.Main test.j
 	java -classpath .:./classes p$(TESTNUM)csx 
 	@echo
 
-testall: all CSXLib.class
-	./testall.sh < CSXTests.input > CSXTests.output 2>&1
+testall: all GeauxLib.class
+	./testall.sh < GeauxTests.input > GeauxTests.output 2>&1
 	@echo
 	
 ###

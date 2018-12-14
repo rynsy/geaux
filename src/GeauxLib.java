@@ -1,8 +1,8 @@
-// This class contains library routines used by CSX program
+// This class contains library routines used by Geaux program
 
-public class CSXLib{
+public class GeauxLib{
 
-	private CSXLib() {
+	private GeauxLib() {
 		// not to be instantiated
 	}
 	private static java.io.PushbackInputStream in =
@@ -189,7 +189,7 @@ public class CSXLib{
 		main();
 	} // main
 
-} // class CSXLib
+} // class GeauxLib
 
 class ArraySizeException extends RuntimeException {
 	static final long serialVersionUID = 1L;

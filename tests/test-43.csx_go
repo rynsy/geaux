@@ -2,7 +2,7 @@
 	Created: May 2013 Raphael Finkel; Modified Jun 2018
 
 	Tests array behavior
-
+grader: test 43 fails in semantics checking -2
 ##
 
 package p43csx

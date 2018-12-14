@@ -1613,7 +1613,7 @@ class ReturnNode extends StmtNode {
         returnVal.checkTypes();
         if (returnVal != ExprNode.NULL) {
             type = returnVal.type;
-// grader: places any type error on the line for function declaration.  -0
+// FIXME: places any type error on the line for function declaration. 
         } else {
             type = new Types(Types.Void);
         }
@@ -1672,6 +1672,11 @@ class BlockNode extends StmtNode {
         System.out.print(linenum + ":");
         genIndent(indent);
         System.out.println("}");
+
+        /*
+         * TODO unparse semi colon if there is one
+         */
+
     } // Unparse
    
     void checkTypes() {
@@ -1749,8 +1754,7 @@ class BlockNode extends StmtNode {
     public List<VarDeclNode>            decls;
 	private final List<StmtNode>        stmts;  
     private final Boolean               semi;
-// grader: semi is never used.  -1
-// grader: happens 6 times.  -0
+// FIXME semi is never used. 
 } // class BlockNode 
 
 class nullBlockNode extends BlockNode {
@@ -1971,8 +1975,7 @@ class nullExprNode extends ExprNode {
     void cg() {
         // do nothing
     }
-// grader: at least put a comment in empty blocks. -0
-// grader: happens 43 times. 
+// TODO: put a comment in empty blocks. -0
 } // class nullExprNode 
 
 class BinaryOpNode extends ExprNode {
@@ -2125,7 +2128,7 @@ class BinaryOpNode extends ExprNode {
                         error() + "Both operands of" + toString(operatorCode) 
                                 + "must be boolean. Alternatively, each operand"
                                 + " could be an int or char."); 
-// grader: allows arrayVar == arrayVar.  -1
+// FIXME: allows arrayVar == arrayVar. 
                 } else {
                     typeMustBe(leftOperand.type.val, 
                             (Types.Integer | Types.Character),
@@ -2478,8 +2481,8 @@ class NameNode extends ExprNode {
             gen("getstatic", idinfo.invocation);
             if (idinfo.kind.val == Kinds.Array) {
                 if (subscriptVal != ExprNode.NULL) {
-// grader: can combine these nested statements.  -0
-// grader: happens 5 times.  -0
+// FIXME: can combine these nested statements.
+// probably other places where I'm doing something similar
                     subscriptVal.cg();
                     loadArray(idinfo.type);
                 }

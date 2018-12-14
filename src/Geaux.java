@@ -1,7 +1,7 @@
 import java.io.*;
 import java_cup.runtime.*;
 
-class P5 {
+class Geaux {
 
 	public static void
 	main(String args[]) throws java.io.IOException,  Exception {

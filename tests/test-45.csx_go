@@ -2,6 +2,8 @@
 	Created: November 2018; Ryan Lindsey
 
     Testing nested labeled loops
+
+ grader: test 45 fails (only extra credit: declarations within blocks): -0
 ##
 
 package p45csx

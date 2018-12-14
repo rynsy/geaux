@@ -2,7 +2,7 @@
   Created: Dec 2002; Modified Jun 2018
 
  The 8-queens problem
-
+grader: test 38 fails in semantics checking (disallows valid return expression): -0
 ##
 
 package p38csx

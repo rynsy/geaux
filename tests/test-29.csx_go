@@ -3,6 +3,9 @@
 
   Check scoping and local variable access
 
+
+  TODO: Fix test 29 fails in semantics checking (disallows global and local with same name): -2
+
 ##
 
 package p29csx
