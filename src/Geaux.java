@@ -23,11 +23,11 @@ class Geaux {
 			System.exit(-1);
     	}
 		Scanner.init(yyin); // Initialize Scanner class for parser
-		parser csxParser = new parser();
+		parser geauxParser = new parser();
 		System.out.println ("\n\n" + "CSX compilation of " + args[0]);
 		Symbol root=null;
 		try {
-			root = csxParser.parse(); // do the parse
+			root = geauxParser.parse(); // do the parse
 			System.out.println ("Program parsed correctly.");
 		} catch (SyntaxErrorException e){
 			System.out.println ("Compilation terminated due to syntax errors.");
@@ -38,7 +38,9 @@ class Geaux {
 			return;
 		}
 		java.io.PrintStream outFile = null;
-		String outFileName = "test.j";
+		String outFileName = "test.j";              // TODO: Change. Ideally you'll compile this from Jasmin->Bytecode without intermediary step. 
+                                                    // Compilation and running should work like this: geaux [programName]
+                                                    //                                                java [programName]
 		try {
 			outFile = new java.io.PrintStream(
 				new java.io.FileOutputStream(outFileName));
@@ -49,8 +51,8 @@ class Geaux {
 		if (((ProgramNode)root.value).codegen(outFile)) {
 			System.out.println ("Program translated; result is in " + outFileName);
 		} else {
-			System.out.println ("Error in translating CSX program");
+			System.out.println ("Error in translating Geaux program");
 		}
 	} // main
-} // class P5
+} // class Geaux
 	

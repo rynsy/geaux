@@ -1,15 +1,3 @@
-##########################################
-####
-# All classes are compiled into the ./classes directory
-#
-# The default is to make all .class files.
-#
-#    clean    -- removes all generated files
-#
-#    test     -- Tests proj5 by running P5.class with inputs test[123].geaux
-#
-###
-
 DESTPATH = ./classes
 COURSEDIR = C:/Users/rmli223.AD/bin/java/geaux
 CUPPATH = ../lib
@@ -27,7 +15,7 @@ JASMINTEST = ../jasmin_tests/$(JASMINTESTNAME).j
 	javac $(JCFLAGS) $<
 
 .PHONY: all 
-all: P5.class Yylex.class parser.class 
+all: Geaux.class Yylex.class parser.class 
 
 sym.java parser.java: geaux.cup 
 	java $(JFLAGS) java_cup/Main < geaux.cup
@@ -68,15 +56,15 @@ testall: all GeauxLib.class
 HOW = basic,braces,clone,design,finalizers,migrating,unusedcode,imports,optimizations,strictexception,strings,sunsecure,typeresolution
 
 style: 
-	t=`pwd`; cd ~raphael/source/pmd-4.2.5/bin; \
-		./pmd.sh $$t text $(HOW)
+	echo "Need to configure the pmd style checker and invoke it here"
 
 ###
 # lint check
 ###
 
 lint: all
-	jlint +all classes
+	echo "Need to configure jlint"
+	#jlint +all classes
 
 ###
 # clean
