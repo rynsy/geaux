@@ -1,0 +1,454 @@
+import java_cup.runtime.*;
+
+class CSXToken {
+	int linenum;
+	int colnum;
+	CSXToken(int line,int col) {
+		linenum=line;colnum=col;
+	}
+}
+
+class CSXIntLitToken extends CSXToken {
+	int intValue;
+	CSXIntLitToken(int val,int line,int col) {
+	   super(line,col);intValue=val; 
+	};
+}
+
+class CSXIdentifierToken extends CSXToken {
+	String identifierText;
+	CSXIdentifierToken(String text,int line,int col) {
+		super(line,col);identifierText=text;
+	}
+}
+
+class CSXCharLitToken extends CSXToken {
+	char charValue;
+	CSXCharLitToken(char val,int line,int col) {
+		super(line,col);charValue=val;
+	}
+}
+
+class CSXStringLitToken extends CSXToken {
+	String stringText; // Full text of string literal,
+                          //  including quotes & escapes
+	CSXStringLitToken(String text,int line,int col) {
+		super(line,col);
+		stringText=text;
+	}
+}
+
+class CSXInvalidToken extends CSXToken {
+	String tokenText; // Full text of token
+	CSXInvalidToken(String text,int line,int col) {
+		super(line,col);
+		tokenText=text;
+	}
+}
+
+class Pos {
+	static int  linenum = 1; /* maintain this as line number current
+                                 token was scanned on */
+	static int  colnum = 1; /* maintain this as column number current
+                                 token began at */
+	static int  line = 1; /* maintain this as line number after
+					scanning current token  */
+	static int  col = 1; /* maintain this as column number after
+					scanning current token  */
+	static void setpos() { // set starting position for current token
+		linenum = line;
+		colnum = col;
+	}
+}
+
+/*
+ *  This class causes a name conflict. In the parser `Symbol`
+ *  refers to java_cup.runtime.Symbol.
+ *
+ *
+class Symbol { 
+	public int sym;
+	public CSXToken value;
+	public Symbol(int tokenType, CSXToken theToken) {
+		sym = tokenType;
+		value = theToken;
+	}
+}
+*/
+%%
+
+DIGIT=[0-9]
+LETTER=[A-Za-z]
+BOOL=(b | B)(o | O)(o | O)(l | L)
+BREAK=(b | B)(r | R)(e | E)(a | A)(k | K)
+CHAR=(c | C)(h | H)(a | A)(r | R)
+CONST=(c | C)(o | O)(n | N)(s | S)(t | T)
+CONTINUE=(c | C)(o | O)(n | N)(t | T)(i | I)(n | N)(u | U)(e | E)
+ELSE=(e | E)(l | L)(s | S)(e | E)
+FALSE=(f | F)(a | A)(l | L)(s | S)(e | E)
+FOR=(f | F)(o | O)(r | R)
+FUNC=(f | F)(u | U)(n | N)(c | C)
+IF=(i | I)(f | F)
+INT=(i | I)(n | N)(t | T)
+PACKAGE=(p | P)(a | A)(c | C)(k | K)(a | A)(g | G)(e | E)
+PRINT=(p | P)(r | R)(i | I)(n | N)(t | T)
+READ=(r | R)(e | E)(a | A)(d | D)
+RETURN=(r | R)(e | E)(t | T)(u | U)(r | R)(n | N)
+TRUE=(t | T)(r | R)(u | U)(e | E)
+VAR=(v | V)(a | A)(r | R)
+
+Id={LETTER}({LETTER}|{DIGIT})* 
+IntLit=[~]?{DIGIT}[.]?{DIGIT}*
+CharLit=[\']([^\n\\]|([\\][\'nt\\]))?[\']
+StrLit=[\"][^\"\\]*(\\.[^\"\\]*)*[\"]
+
+SingleComment=[/][/][^\n]*
+MultiComment=#{2}(([#][^#])|[^#])*#{2}
+
+%type Symbol
+%eofval{
+  return new Symbol(sym.EOF, new CSXToken(0,0));
+%eofval}
+
+%%
+{BOOL} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_BOOL,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{BREAK} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_BREAK,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{CHAR} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_CHAR,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{CONST} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_CONST,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{CONTINUE} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_CONTINUE,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{ELSE} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_ELSE,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{FALSE} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_FALSE,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{FOR} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_FOR,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{FUNC} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_FUNC,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{IF} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_IF,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{INT} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_INT,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{PACKAGE} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_PACKAGE,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{PRINT} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_PRINT,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{READ} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_READ,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{RETURN} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_RETURN,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{TRUE} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_TRUE,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+{VAR} {
+    Pos.setpos();
+    Pos.col += yytext().length();
+    return new Symbol(sym.rw_VAR,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"("	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.LPAREN,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+")"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.RPAREN,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"["	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.LBRACKET,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"]"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.RBRACKET,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"="	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.ASG,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+";"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.SEMI,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"+"	{
+    Pos.setpos();
+    Pos.col += 1;
+    return new Symbol(sym.PLUS,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"-"	{
+    Pos.setpos();
+    Pos.col += 1;
+    return new Symbol(sym.MINUS,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"*"	{
+    Pos.setpos();
+    Pos.col += 1;
+    return new Symbol(sym.TIMES,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"/"	{
+    Pos.setpos();
+    Pos.col += 1;
+    return new Symbol(sym.SLASH,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"=="	{
+    Pos.setpos();
+    Pos.col +=2;
+    return new Symbol(sym.EQ, 
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"!="	{
+    Pos.setpos();
+    Pos.col +=2;
+    return new Symbol(sym.NOTEQ, 
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"&&"	{
+    Pos.setpos();
+    Pos.col +=2;
+    return new Symbol(sym.CAND,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"||"	{
+    Pos.setpos();
+    Pos.col +=2;
+    return new Symbol(sym.COR, 
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"<"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.LT,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+">"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.GT,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"<="	{
+    Pos.setpos();
+    Pos.col +=2;
+    return new Symbol(sym.LEQ,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+">="	{
+    Pos.setpos();
+    Pos.col +=2;
+    return new Symbol(sym.GEQ,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+","	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.COMMA,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"!"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.NOT,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"{"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.LBRACE,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+"}"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.RBRACE, 
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+":"	{
+    Pos.setpos();
+    Pos.col +=1;
+    return new Symbol(sym.COLON,
+        new CSXToken(Pos.linenum,Pos.colnum));
+}
+\n	{
+    Pos.setpos();
+    Pos.line += 1;
+    Pos.col = 1;
+}
+" "	{
+    Pos.setpos();
+    Pos.col += 1;
+}
+\t  {
+    Pos.setpos();
+    Pos.col += 1;
+}
+{Id} {
+    Pos.setpos(); 
+    Pos.col += yytext().length();
+    return new Symbol(sym.IDENTIFIER,
+        new CSXIdentifierToken(yytext(), 
+            Pos.linenum,Pos.colnum));
+}
+{IntLit}	{
+    String token = yytext();
+    int value = 0;
+    Pos.setpos(); 
+    Pos.col += token.length();
+    if (token.charAt(0) == '~') {
+        //use the appropriate signage
+        token = "-" + token.substring(1, token.length());
+    } 
+
+    try {
+        value = Integer.parseInt(token);
+    } catch (NumberFormatException e) {
+        if (token.charAt(0) == '-') {
+            value = Integer.MIN_VALUE;
+            System.out.println("Error: Integer overflow. Defaulting to Integer.MIN_VALUE");
+        }
+        else {
+            value = Integer.MAX_VALUE;
+            System.out.println("Error: Integer overflow. Defaulting to Integer.MAX_VALUE");
+        }
+    }
+    return new Symbol(sym.INTLIT,
+        new CSXIntLitToken(value,
+            Pos.linenum,Pos.colnum));
+}
+{CharLit} {
+    Pos.setpos(); 
+    Pos.col += 1;
+    char c;
+    if (yytext().charAt(1) == '\\') {
+        if (yytext().charAt(2) == 'n') {
+            c = '\n';
+        } else if (yytext().charAt(2) == 't') {
+            c = '\t';
+        } else if (yytext().charAt(2) == '\\') {
+            c = '\\';
+        } else if (yytext().charAt(2) == '\'') {
+            c = '\'';
+        } else {
+            System.out.println("Error: illegal escaped character in character literal. Defaulting to \\t");
+            c = '\t';
+        }
+    } else {
+        c = yytext().charAt(1);
+    }
+    return new Symbol(sym.CHARLIT,
+        new CSXCharLitToken(c,
+            Pos.linenum,Pos.colnum));
+}
+{StrLit} {
+    Pos.setpos(); 
+    Pos.col += yytext().length();
+    return new Symbol(sym.STRLIT,
+        new CSXStringLitToken(yytext().toString(),
+            Pos.linenum,Pos.colnum));
+}
+{SingleComment} {
+    Pos.setpos();
+    Pos.col = 1;
+}
+{MultiComment} {
+    Pos.setpos();
+    int newlines = 0;
+    int posLastNewline = 0;
+    String comment = yytext().toString();
+    for (int i = 0; i < comment.length(); i++) {
+        if (comment.charAt(i) == '\n') {
+            newlines += 1;
+            posLastNewline = i;
+        }
+    }
+    Pos.line += newlines;
+    Pos.col = comment.length() - posLastNewline;
+}
+[^] {    
+    Pos.setpos(); Pos.col += yytext().length();
+    return new Symbol(sym.error,
+        new CSXInvalidToken(yytext().toString(), 
+            Pos.linenum,Pos.colnum));
+}

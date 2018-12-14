@@ -1,0 +1,40 @@
+## Test 47
+	Created: November 2018; Ryan Lindsey
+
+    Testing assignment of character arrays
+##
+
+package p47csx
+func main() {
+    var cA char[5];
+    var cB char[5];
+    var cC char[5];
+    print "Testing Program p47csx", "\n";
+    
+    cA = "test1";
+    cB = "test2";
+    cC = "test3";
+    
+    print "Should be 'test1': ", cA[0], cA[1], cA[2], cA[3], cA[4], "\n";
+    print "Should be 'test2': ", cB[0], cB[1], cB[2], cB[3], cB[4], "\n";
+    print "Should be 'test3': ", cC[0], cC[1], cC[2], cC[3], cC[4], "\n";
+   
+    cC = cA;
+    cB = cA;
+    cA = cA;
+    
+    print "Should be 'test1': ", cA[0], cA[1], cA[2], cA[3], cA[4], "\n";
+    print "Should be 'test1': ", cB[0], cB[1], cB[2], cB[3], cB[4], "\n";
+    print "Should be 'test1': ", cC[0], cC[1], cC[2], cC[3], cC[4], "\n";
+    
+    cA = "test1";
+    cB = "test2";
+    cC = "test3";
+    
+    print "Should be 'test1': ", cA[0], cA[1], cA[2], cA[3], cA[4], "\n";
+    print "Should be 'test2': ", cB[0], cB[1], cB[2], cB[3], cB[4], "\n";
+    print "Should be 'test3': ", cC[0], cC[1], cC[2], cC[3], cC[4], "\n";
+
+    print "Test completed", "\n";
+} // func main
+// package p44csx

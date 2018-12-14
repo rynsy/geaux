@@ -1,0 +1,19 @@
+## Test 49
+	Created: November 2018; Ryan Lindsey
+
+    Testing default values for variables
+##
+package p49csx
+func main() {
+    var a int;
+    var b bool;
+    var c char;
+    print "Testing Program p49csx", "\n";
+    print "(int, bool, char) should default to (0, false, 'A')\n";
+    print "int a = ", a, "\n"; 
+    print "bool b = ", b, "\n"; 
+    print "char c = ", c, "\n"; 
+
+    print "Test completed", "\n";
+} // func main
+// package p44csx

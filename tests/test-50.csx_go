@@ -1,0 +1,19 @@
+## Test 50
+	Created: November 2018; Ryan Lindsey
+
+    Testing default values for global variables
+##
+package p50csx
+var a int;
+var b bool;
+var c char;
+func main() {
+    print "Testing Program p50csx", "\n";
+    print "global (int, bool, char) should default to (0, false, 'A')\n";
+    print "int a = ", a, "\n"; 
+    print "bool b = ", b, "\n"; 
+    print "char c = ", c, "\n"; 
+
+    print "Test completed", "\n";
+} // func main
+// package p50csx

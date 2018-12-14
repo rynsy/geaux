@@ -1,0 +1,16 @@
+## Test 46
+	Created: November 2018; Ryan Lindsey
+
+    Testing initialization of globals
+##
+
+package p46csx
+var a int = ((1 + 2) / 3);
+var b int = ((4 + 4) / 2);
+func main() {
+    print "Testing Program p46csx", "\n";
+    print "Should be: a = 1 b = 4\n";
+    print "a = ", a, " b = ", b, "\n";
+    print "Test completed", "\n";
+} // func main
+// package p44csx
