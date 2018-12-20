@@ -1,0 +1,11 @@
+## Test 01
+ Checks for proper working of integer print
+##
+
+package p01go
+func main() {
+    print "Testing Program p01go\n";
+    print 0, ~123456, 123456, "\n";
+    print "Test completed\n";
+} // func main
+// package p01go

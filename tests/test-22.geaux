@@ -1,0 +1,36 @@
+## Test 22
+ Check for loops
+##
+
+package p22go
+func main() {
+    var i int;
+    var j int;
+    var b bool;
+    print "Testing Program p22go\n";
+    i = 1;
+    for i < 5 {
+        print "Iteration ", i, "\n";
+        i = i + 1;
+    } // for
+    i = 1;
+    for i < 3 {
+        j = 1;
+        for j < 3 {
+            print "( ", i, j, " )", "\n";
+            j = j + 1;
+        } // for
+        i = i + 1;
+    } // for
+    i = 1;
+    j = 1;
+    for i < 3 {
+        i = i + 1;
+        if i == 2 {
+            j = j + 1;
+        }
+    } // for
+    print "i = ", i, " j = ", j, "\n";
+    print "Test completed", "\n";
+} // func main
+// package p22go

@@ -1,0 +1,31 @@
+## Test 55
+    Testing reading into local/global variables
+##
+package p55go
+
+var gI int;
+var gC char;
+
+func main() {
+    var i int;
+    var c char;
+    print "Testing Program p55go", "\n"; 
+##
+    print "Enter a integer (local): ";
+    read i;
+    print "Enter a integer (global): ";
+    read gI;
+    print "Enter a character (local): ";
+    read c;
+    print "Enter a character (global): ";
+    read gC;
+##
+
+    print "Enter in this order (local int, local char, global int, global char):";
+    read i, c, gI, gC;
+    print "Local vars (int, char): (", i, ",", c, ")\n";
+    print "Global vars (int, char): (", gI, ",", gC, ")\n";
+
+    print "\nTest completed", "\n";
+} // func main
+// package p55go

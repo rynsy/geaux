@@ -1,0 +1,24 @@
+## Test 32
+ Check recursive function calls using you-know-what
+    FIXME: fails in semantics checking (claims no return)
+##
+
+package p32go
+var cnt int;
+func fac(n int) int {
+    if n <= 1 {
+        return 1;
+    } else {
+        return fac(n - 1) * n;
+    }
+} // func fac
+func main() {
+    print "Testing Program p32go", "\n";
+    cnt = 1;
+    for cnt <= 9 {
+        print "Factorial of ", cnt, " is ", fac(cnt), "\n";
+        cnt = cnt + 1;
+    } // for
+    print "Test completed", "\n";
+} // func main
+// package p32go

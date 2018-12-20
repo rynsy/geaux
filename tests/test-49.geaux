@@ -1,0 +1,17 @@
+## Test 49
+    Testing default values for variables
+##
+package p49go
+func main() {
+    var a int;
+    var b bool;
+    var c char;
+    print "Testing Program p49go", "\n";
+    print "(int, bool, char) should default to (0, false, 'A')\n";
+    print "int a = ", a, "\n"; 
+    print "bool b = ", b, "\n"; 
+    print "char c = ", c, "\n"; 
+
+    print "Test completed", "\n";
+} // func main
+// package p44go

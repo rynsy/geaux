@@ -1,0 +1,13 @@
+## Test 04
+ Checks for global variables w/ initialization
+##
+
+package p04go
+func main() {
+    var i1 int = 123;
+    var i2 bool = false;
+    print "Testing program p04go\n";
+    print "i1 = ", i1, "\n";
+    print "i2 = ", i2, "\n";
+} // func main
+// package p04go

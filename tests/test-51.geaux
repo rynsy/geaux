@@ -1,0 +1,33 @@
+## Test 51
+    Testing constants
+##
+package p51go
+const aa = 1;
+
+func main() {
+    const bb = 2;
+    var a int;
+    var b bool;
+    var c char;
+    print "Testing Program p51go", "\n";
+    print "a: ", a, "\n";
+    print "aa: ", aa, "\n";
+    a = aa;
+    print "a after \"a = aa;\" :", a, "\n";
+    print "b: ", b, "\n";
+    b = bool(aa);
+    print "b after \"b = aa;\" :", b, "\n";
+
+    print "c: ", c, "\n";
+    c = char(aa + int(c));
+    print "c after \"c = aa + c;\" :", c, "\n";
+    print "bb: ", bb, "\n";
+    print "aa + bb: ", aa + bb, "\n";
+    print "aa - bb: ", aa - bb, "\n";
+    print "bb - aa: ", bb - aa, "\n";
+    print "aa * bb: ", aa * bb, "\n";
+    print "aa / bb: ", aa / bb, "\n";
+    print "bb / aa: ", bb / aa, "\n";
+    print "Test completed", "\n";
+} // func main
+// package p51go

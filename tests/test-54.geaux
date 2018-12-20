@@ -1,0 +1,32 @@
+## Test 54
+    Testing passing arrays to functions..
+##
+package p54go
+
+var size int = 10;
+
+func printArray(a [] int) {
+    var i int = 0;
+    print "In function printArray\n";
+    for i < size {
+        print "a[", i, "] value: ", a[i], "\n";
+        i = i + 1;
+    }
+}
+
+func main() {
+    var a int[10];          // Grammar unfortunately doesn't allow setting array size with ExprNode
+    var i int = 0;
+    print "Testing Program p54go", "\n"; 
+
+    for i < size {
+        print "Setting element a[", i, "] to value: ", i * 10, "\n";
+        a[i] = i * 10;
+        i = i + 1;
+    }
+
+    printArray(a);
+
+    print "\nTest completed", "\n";
+} // func main
+// package p54go

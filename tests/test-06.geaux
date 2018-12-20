@@ -1,0 +1,25 @@
+## Test 06
+ Test simple if-then and if-then-else
+##
+
+package p06go
+func main() {
+    print "Testing program p06go\n";
+    if true {
+        print "if-then statement works\n";
+    }
+    if false {
+        print "if-then statement DOESN'T work\n";
+    }
+    if true {
+        print "if-then-else statement works\n";
+    } else {
+        print "if-then-else statement DOESN'T work\n";
+    }
+    if false {
+        print "if-then-else statement DOESN'T work\n";
+    } else {
+        print "if-then-else statement works\n";
+    }
+} // func main
+// package p06go

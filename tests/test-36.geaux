@@ -1,0 +1,25 @@
+## Test 36
+ Let's try a Fibonacci sequence
+ FIXME: fails in semantics checking (disallows valid return expression)
+##
+
+package p36go
+var cnt int;
+const lim = 15;
+func fib(n int) int {
+    if n <= 1 {
+        return 1;
+    } else {
+        return fib(n - 1) + fib(n - 2);
+    }
+} // func fib
+func main() {
+    print "Testing Program p36go", "\n";
+    cnt = 0;
+    for cnt <= lim {
+        print "Fibonacci of ", cnt, " is ", fib(cnt), "\n";
+        cnt = cnt + 1;
+    } // for
+    print "Test completed", "\n";
+} // func main
+// package p36go

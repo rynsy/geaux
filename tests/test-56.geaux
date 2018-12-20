@@ -1,0 +1,35 @@
+## Test 56
+    Testing different return values and casting
+    values
+##
+package p56go
+
+func test1() int {
+    return 2;
+}
+func test2() char {
+    return char(65);
+}
+func test3() bool {
+    return bool(100);
+    return 1;
+}
+
+func main() {
+    var a int = test1();
+    var b char = test2();
+    var c bool = test3();
+    print "Testing Program p56go", "\n"; 
+
+    print "Should be (2,'A',true): (", a, ',', b, ',', c, ")\n"; 
+    a = int(b);
+    b = char(int(c) + int(b));
+    c = bool(0);
+    print "Should be (65,'B',false): (", a, ',', b, ',', c, ")\n"; 
+    a = int(c);
+    b = char(int(b) + 1);
+    c = bool(b);
+    print "Should be (0,'C',true): (", a, ',', b, ',', c, ")\n"; 
+    print "\nTest completed", "\n";
+} // func main
+// package p56go

@@ -1,0 +1,48 @@
+## Test 21
+ Check control flow in a deeply nested loop
+##
+
+package p21go
+func main() {
+    var loopcount int;
+    var flag bool;
+    print "Testing Program p21go\n";
+    flag = true;
+    loopcount = 0;
+    for flag == true {
+        loopcount = loopcount + 1;
+        for flag == true {
+            loopcount = loopcount + 1;
+            for flag == true {
+                loopcount = loopcount + 1;
+                for flag == true {
+                    loopcount = loopcount + 1;
+                    for flag == true {
+                        loopcount = loopcount + 1;
+                        for flag == true {
+                            loopcount = loopcount + 1;
+                            for flag == true {
+                                loopcount = loopcount + 1;
+                                for flag == true {
+                                    loopcount = loopcount + 1;
+                                    for flag == true {
+                                        loopcount = loopcount + 1;
+                                        for flag == true {
+                                            loopcount = loopcount + 1;
+                                            flag = false;
+                                        } // for
+                                    } // for
+                                } // for
+                            } // for
+                        } // for
+                    } // for
+                } // for
+            } // for
+        } // for
+    } // for
+    if loopcount != 10 {
+        print "\nERROR: Not all loops executed properly: ", loopcount, "\n";
+    }
+    print "Test completed\n";
+} // func main
+// package p21go

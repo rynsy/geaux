@@ -1,0 +1,14 @@
+## Test 15
+  Test simple while loops
+##
+
+package p15go
+func main() {
+    var i int = 0;
+    print "Testing program p15go\n";
+    for i < 100 {
+		i = i + 1;
+    } // for
+    print "The value of i is ", i, "\n";
+} // func main
+// package p15go

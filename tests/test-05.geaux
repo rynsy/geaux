@@ -1,0 +1,13 @@
+## Test 05
+ Checks for global constants
+##
+
+package p05go
+func main() {
+    const i1 = 123;
+    const i2 = false;
+    print "Testing program p05go\n";
+    print "i1 = ", i1, "\n";
+    print "i2 = ", i2, "\n";
+} // func main
+// package p05go

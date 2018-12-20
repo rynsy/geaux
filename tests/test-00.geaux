@@ -1,0 +1,11 @@
+## Test 00
+  Checks for proper working of string print
+   (which is used by all test programs)
+##
+
+package p00go
+func main() {
+    print "Testing Program p00go\n";
+    print "Test completed\n";
+} // func main
+// package p00go

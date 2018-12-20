@@ -1,0 +1,30 @@
+## Test 45
+    Testing nested labeled loops
+    FIXME fails declarations within blocks should work
+##
+
+package p45go
+func main() {
+    var a int;
+    var b int;
+    print "Testing Program p45go", "\n";
+    a = 0; b = 0;
+    loop1: for a < 10 {
+        a = a + 1;
+        if a > 1 {
+            b = a;
+            loop2: for b > 0 {
+                b = b - 1;
+                if b > 2 {
+                    continue loop2;
+                } else {
+                    continue loop1;
+                }
+            }
+        }
+    } // loop1
+    print "Should be: a = 10 b = 2 \n";
+    print "a = ", a, " b = ", b, "\n";
+    print "Test completed", "\n";
+} // func main
+// package p44go
