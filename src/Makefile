@@ -1,12 +1,12 @@
 DESTPATH = ./classes
-COURSEDIR = C:/Users/rmli223.AD/bin/java/geaux
-CUPPATH = ../lib
+PROJDIR = /homes/rmli223/geaux
+CUPPATH = $(PROJDIR)/lib
 CLASSPATH = $(DESTPATH):$(CUPPATH)/java-cup-10k.jar
 JASMINPATH = $(CUPPATH)/cup.jar:$(CUPPATH)/jasmin-sable.jar
 VPATH = $(DESTPATH)
 JCFLAGS = -Xlint:all,-auxiliaryclass,-rawtypes -deprecation -classpath $(CLASSPATH) -d $(DESTPATH)
 JFLAGS = -classpath $(CLASSPATH)
-TESTDIR = tests
+TESTDIR = ../tests
 TESTNUM = 00
 JASMINTESTNAME = debug
 JASMINTEST = ../jasmin_tests/$(JASMINTESTNAME).j
@@ -28,7 +28,7 @@ Scanner.class: Yylex.class Types.class
 SymbolInfo.class: Kinds.class
 ASTNode.class: ast.java sym.class SymbolTable.class SymbolInfo.class
 	javac $(JCFLAGS) ast.java
-P5.class: Yylex.class Scanner.class parser.class ASTNode.class
+Geaux.class: Yylex.class Scanner.class parser.class ASTNode.class
 
 jazz:
 	java -classpath $(JASMINPATH) jasmin.Main $(JASMINTEST)
@@ -42,33 +42,12 @@ editjazz:
 test: all GeauxLib.class
 	java $(JFLAGS) Geaux $(TESTDIR)/test-$(TESTNUM).geaux
 	java -classpath $(JASMINPATH) jasmin.Main test.j
-	java -classpath .:./classes p$(TESTNUM)csx 
+	java -classpath .:./classes p$(TESTNUM)go 
 	@echo
 
 testall: all GeauxLib.class
 	./testall.sh < GeauxTests.input > GeauxTests.output 2>&1
 	@echo
 	
-###
-# style check
-###
-
-HOW = basic,braces,clone,design,finalizers,migrating,unusedcode,imports,optimizations,strictexception,strings,sunsecure,typeresolution
-
-style: 
-	echo "Need to configure the pmd style checker and invoke it here"
-
-###
-# lint check
-###
-
-lint: all
-	echo "Need to configure jlint"
-	#jlint +all classes
-
-###
-# clean
-###
-
 clean: 
 	rm -f $(DESTPATH)/*.class Yylex.java* sym.java parser.java test.j *.class

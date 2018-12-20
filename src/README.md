@@ -5,7 +5,6 @@ It's a pretty basic go-like language. I enjoyed working on it, so I'm going to k
 adding features. 
 
 TODO:
-* Restructure project to work with Maven. 
 * Create automated testing system. 
 * Fix TODO's
 * Refactor/clean-up code a bit. 

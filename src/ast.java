@@ -1418,11 +1418,11 @@ class ReadNode extends StmtNode {
 
     void cg() {
         if (targetVar.type.val == Types.Integer) {
-            gen("invokestatic"," CSXLib/readInt()I");
+            gen("invokestatic"," GeauxLib/readInt()I");
         } else if (targetVar.type.val == Types.Character) {
-            gen("invokestatic"," CSXLib/readChar()C");
+            gen("invokestatic"," GeauxLib/readChar()C");
         } else if (targetVar.type.val == Types.Boolean) {
-            gen("invokestatic"," CSXLib/readBool()Z");
+            gen("invokestatic"," GeauxLib/readBool()Z");
         } else {
             mustBe(false);
         }
@@ -1511,16 +1511,16 @@ class DisplayNode extends StmtNode {
         }
         switch (outputValue.type.val) {
             case Types.Integer:
-                gen("invokestatic"," CSXLib/printInt(I)V");
+                gen("invokestatic"," GeauxLib/printInt(I)V");
                 break;
             case Types.Boolean:
-                gen("invokestatic"," CSXLib/printBool(Z)V");
+                gen("invokestatic"," GeauxLib/printBool(Z)V");
                 break;
             case Types.Character:
-                gen("invokestatic"," CSXLib/printChar(C)V");
+                gen("invokestatic"," GeauxLib/printChar(C)V");
                 break;
             case Types.String:
-                gen("invokestatic"," CSXLib/printString(Ljava/lang/String;)V");
+                gen("invokestatic"," GeauxLib/printString(Ljava/lang/String;)V");
                 break;
             default:
                 mustBe(false);
