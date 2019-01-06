@@ -5,6 +5,8 @@ It's a pretty basic go-like language. I enjoyed working on it, so I'm going to k
 adding features. 
 
 TODO:
+* Create a system to build jar of the application
+* Add cli to jar for easy use
 * Create automated testing system. 
 * Fix TODO's
 * Refactor/clean-up code a bit. 
