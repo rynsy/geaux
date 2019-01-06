@@ -1,7 +1,7 @@
 ## Test 52
     Testing default values for global variables 
 ##
-package p52go
+package p52geaux
 
 var a int = (2 * (10 / 5));
 var b bool = (true && (3 > 0 || false));
@@ -12,7 +12,7 @@ func add3(a int, b int, c int) int {
 }
 func main() {
     var i int = 1;
-    print "Testing Program p52go", "\n";
+    print "Testing Program p52geaux", "\n";
 
     print "(a,b,c) (should be (4, true, 'A')): (", a, ",", b, ",", c,")\n";
     print "a+b+c (should be 4 + 1 + 65 = 70): ", add3(a,int(b),int(c)),"\n";
@@ -20,4 +20,4 @@ func main() {
     print "aa + aa (should be 22 + 22 = 44):", aa + aa, "\n";
     print "Test completed", "\n";
 } // func main
-// package p52go
+// package p52geaux

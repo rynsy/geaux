@@ -1,7 +1,7 @@
 ## Test 53
     Testing nested procedures.
 ##
-package p53go
+package p53geaux
 
 func genIndent(a int) {
     var i int = 0;
@@ -55,9 +55,9 @@ func html() {
 }
 
 func main() {
-    print "Testing Program p53go", "\n";
+    print "Testing Program p53geaux", "\n";
     print "Using nested function calls to make simple HTML doc: \n";
     html();
     print "\nTest completed", "\n";
 } // func main
-// package p53go
+// package p53geaux

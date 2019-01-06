@@ -2,7 +2,7 @@
   Use array parameters to sort
 ##
 
-package p39go
+package p39geaux
 var i int[10];
 func sortup(i []int) {
     var a int;
@@ -41,7 +41,7 @@ func sortdown(i []int) {
     } // for
 } // func sortdown
 func main() {
-    print "Testing program p39go\n";
+    print "Testing program p39geaux\n";
     i[0] = 1;
     i[1] = ~10;
     i[2] = 100;
@@ -57,4 +57,4 @@ func main() {
     sortdown(i);
     print "Sorted values (descending order) are:\n", i[0], "\t", i[1], "\t", i[2], "\t", i[3], "\t", i[4], "\n", i[5], "\t", i[6], "\t", i[7], "\t", i[8], "\t", i[9], "\n";
 } // func main
-// package p39go
+// package p39geaux

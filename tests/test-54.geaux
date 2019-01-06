@@ -1,7 +1,7 @@
 ## Test 54
     Testing passing arrays to functions..
 ##
-package p54go
+package p54geaux
 
 var size int = 10;
 
@@ -17,7 +17,7 @@ func printArray(a [] int) {
 func main() {
     var a int[10];          // Grammar unfortunately doesn't allow setting array size with ExprNode
     var i int = 0;
-    print "Testing Program p54go", "\n"; 
+    print "Testing Program p54geaux", "\n";
 
     for i < size {
         print "Setting element a[", i, "] to value: ", i * 10, "\n";
@@ -29,4 +29,4 @@ func main() {
 
     print "\nTest completed", "\n";
 } // func main
-// package p54go
+// package p54geaux

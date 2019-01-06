@@ -2,7 +2,7 @@
  Check that control flows correctly in complex nested if statements
 ##
 
-package p19go
+package p19geaux
 func main() {
     const cI1 = 1;
     const cI9 = 9;
@@ -13,7 +13,7 @@ func main() {
     var vbt bool;
     var vbf bool;
     var flowcount int;
-    print "Testing Program p19go\n";
+    print "Testing Program p19geaux\n";
     vI1 = 1;
     vI9 = 9;
     vbt = true;
@@ -54,4 +54,4 @@ func main() {
     }
     print "Test completed\n";
 } // func main
-// package p19go
+// package p19geaux

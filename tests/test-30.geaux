@@ -2,7 +2,7 @@
  Check recursive parameterless procedure calls
 ##
 
-package p30go
+package p30geaux
 var n int;
 var fact int;
 func factorial() {
@@ -16,10 +16,10 @@ func factorial() {
     }
 } // func factorial
 func main() {
-    print "Testing Program p30go", "\n";
+    print "Testing Program p30geaux", "\n";
     n = 6;
     factorial();
     print "\n", "Factorial of ", n, " is ", fact, "\n";
     print "Test completed", "\n";
 } // func main
-// package p30go
+// package p30geaux

@@ -2,10 +2,10 @@
  Checks for proper working of integer print
 ##
 
-package p01go
+package p01geaux
 func main() {
-    print "Testing Program p01go\n";
+    print "Testing Program p01geaux\n";
     print 0, ~123456, 123456, "\n";
     print "Test completed\n";
 } // func main
-// package p01go
+// package p01geaux

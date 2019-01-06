@@ -1,7 +1,7 @@
 ## Test 55
     Testing reading into local/global variables
 ##
-package p55go
+package p55geaux
 
 var gI int;
 var gC char;
@@ -9,7 +9,7 @@ var gC char;
 func main() {
     var i int;
     var c char;
-    print "Testing Program p55go", "\n"; 
+    print "Testing Program p55geaux", "\n";
 ##
     print "Enter a integer (local): ";
     read i;
@@ -28,4 +28,4 @@ func main() {
 
     print "\nTest completed", "\n";
 } // func main
-// package p55go
+// package p55geaux

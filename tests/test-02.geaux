@@ -2,10 +2,10 @@
  Checks for proper working of boolean print
 ##
 
-package p02go
+package p02geaux
 func main() {
-    print "Testing Program p02go\n";
+    print "Testing Program p02geaux\n";
     print false, true, "\n";
     print "Test completed\n";
 } // func main
-// package p02go
+// package p02geaux

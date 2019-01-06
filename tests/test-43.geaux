@@ -3,7 +3,7 @@
     FIXME: test failing
 ##
 
-package p43go
+package p43geaux
 var a int[1];
 var b bool[1];
 var c char[1];
@@ -11,7 +11,7 @@ func main() {
     var aa int[1];
     var bb bool[1];
     var cc char[1];
-    print "Testing Program p43go", "\n";
+    print "Testing Program p43geaux", "\n";
     a[0] = 3;
     aa[0] = 4;
     b[0] = false;
@@ -50,4 +50,4 @@ func main() {
     }
     print "Test completed", "\n";
 } // func main
-// package p43go
+// package p43geaux

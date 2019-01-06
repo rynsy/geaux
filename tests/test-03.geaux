@@ -2,14 +2,14 @@
  Checks for global variables and simple assignment statements
 ##
 
-package p03go
+package p03geaux
 func main() {
     var i1 int;
     var i2 bool;
-    print "Testing program p03go\n";
+    print "Testing program p03geaux\n";
     i1 = 123;
     print "i1 = ", i1, "\n";
     i2 = true;
     print "i2 = ", i2, "\n";
 } // func main
-// package p03go
+// package p03geaux

@@ -2,12 +2,12 @@
   Test reads
 ##
 
-package p11go
+package p11geaux
 func main() {
     var i1 int;
-    print "Testing program p11go\n";
+    print "Testing program p11geaux\n";
     print "Enter an integer:\n";
     read i1;
     print "The integer you entered was ", i1, "\n";
 } // func main
-// package p11go
+// package p11geaux

@@ -2,7 +2,7 @@
     Testing different return values and casting
     values
 ##
-package p56go
+package p56geaux
 
 func test1() int {
     return 2;
@@ -19,7 +19,7 @@ func main() {
     var a int = test1();
     var b char = test2();
     var c bool = test3();
-    print "Testing Program p56go", "\n"; 
+    print "Testing Program p56geaux", "\n";
 
     print "Should be (2,'A',true): (", a, ',', b, ',', c, ")\n"; 
     a = int(b);
@@ -32,4 +32,4 @@ func main() {
     print "Should be (0,'C',true): (", a, ',', b, ',', c, ")\n"; 
     print "\nTest completed", "\n";
 } // func main
-// package p56go
+// package p56geaux

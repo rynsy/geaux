@@ -2,10 +2,10 @@
   Test LOTS of assignment statements
 ##
 
-package p13go
+package p13geaux
 func main() {
     var i int = 0;
-    print "Testing program p13go\n";
+    print "Testing program p13geaux\n";
     i = i + 1;
     i = i + 1;
     i = i + 1;
@@ -1009,4 +1009,4 @@ func main() {
     i = i + 1;
     print "i = ", i, "\n";
 } // func main
-// package p13go
+// package p13geaux

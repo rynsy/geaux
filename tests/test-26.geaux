@@ -2,7 +2,7 @@
  Check simple parameterless procedures
 ##
 
-package p26go
+package p26geaux
 func proc1() {
     print "\n", "Procedure 1 entered";
     print "\n", "Procedure 1 exited";
@@ -14,9 +14,9 @@ func proc2() {
 func main() {
     var x int;
     var y int;
-    print "Testing Program p26go", "\n";
+    print "Testing Program p26geaux", "\n";
     proc1();
     proc2();
     print "Test completed", "\n";
 } // func main
-// package p26go
+// package p26geaux

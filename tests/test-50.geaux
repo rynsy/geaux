@@ -1,12 +1,12 @@
 ## Test 50
     Testing default values for global variables
 ##
-package p50go
+package p50geaux
 var a int;
 var b bool;
 var c char;
 func main() {
-    print "Testing Program p50go", "\n";
+    print "Testing Program p50geaux", "\n";
     print "global (int, bool, char) should default to (0, false, 'A')\n";
     print "int a = ", a, "\n"; 
     print "bool b = ", b, "\n"; 
@@ -14,4 +14,4 @@ func main() {
 
     print "Test completed", "\n";
 } // func main
-// package p50go
+// package p50geaux

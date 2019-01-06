@@ -2,12 +2,12 @@
   Test simple nested while loops
 ##
 
-package p16go
+package p16geaux
 func main() {
     var i int = 1;
     var j int = 1;
     var sum int = 0;
-    print "Testing program p16go\n";
+    print "Testing program p16geaux\n";
     for i <= 100 {
         j = 1;
         for j <= 100 {
@@ -18,4 +18,4 @@ func main() {
     } // for
     print "The value of sum is ", sum, "\n";
 } // func main
-// package p16go
+// package p16geaux

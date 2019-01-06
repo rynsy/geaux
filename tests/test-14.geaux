@@ -2,13 +2,13 @@
  Checks integer, boolean and relational operators
 ##
 
-package p14go
+package p14geaux
 func main() {
     var i1 int;
     var i2 int;
     var b1 bool;
     var b2 bool;
-    print "Testing program p14go\n";
+    print "Testing program p14geaux\n";
     i1 = ~2147483640;
     i2 = 2147483647;
     if (((i1 > i2) || (i1 == i2)) || (i2 < i1)) || (i2 != i2) {
@@ -33,4 +33,4 @@ func main() {
     }
     print "\n";
 } // func main
-// package p14go
+// package p14geaux

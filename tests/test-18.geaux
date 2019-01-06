@@ -5,12 +5,12 @@
  Assume input is: -7, -14, 22
 ##
 
-package p18go
+package p18geaux
 func main() {
     var x int;
     var y int;
     var z int;
-    print "Testing Program p18go\n";
+    print "Testing Program p18geaux\n";
     read x, y, z;
     if ((x != ~7) || (y != ~14)) || (z != 22) {
         print "\nERROR: Read error\n";
@@ -21,4 +21,4 @@ func main() {
     print "Testing print:  Output is ", x, z, y, "\n";
     print "Test completed\n";
 } // func main
-// package p18go
+// package p18geaux

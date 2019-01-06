@@ -2,7 +2,7 @@
  Test proper operation of operators for integer values
 ##
 
-package p07go
+package p07geaux
 func main() {
     var i1 int;
     var i2 int;
@@ -12,7 +12,7 @@ func main() {
     var i6 int;
     var i7 int;
     var i8 int;
-    print "Testing program p07go\n";
+    print "Testing program p07geaux\n";
     i1 = 10;
     i2 = ~20;
     i3 = i1 * i2;
@@ -24,4 +24,4 @@ func main() {
     print i1, "\t", i2, "\t", i3, "\t", i4, "\n", i5, "\t", i6, "\t", i7, "\t",
         i8, "\n";
 } // func main
-// package p07go
+// package p07geaux

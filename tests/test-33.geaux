@@ -2,7 +2,7 @@
   Checks print statements and simple function calls
 ##
 
-package p33go
+package p33geaux
 var x int;
 var y int;
 var li bool;
@@ -10,7 +10,7 @@ func lessthanzero(x1 int, y1 int) {
     li = (x1 < 0) && (y1 < 0);
 } // func lessthanzero
 func main() {
-    print "Testing Program p33go\n";
+    print "Testing Program p33geaux\n";
     x = ~20;
     y = ~10;
     print " Output ", "X = ", x, " * ", "Y = ", y, " = ", x * y, "\n";
@@ -24,4 +24,4 @@ func main() {
     print " Output ", "X = ", x, " / ", "Y = ", y, " = ", x / y, "\n";
     print "Test completed\n";
 } // func main
-// package p33go
+// package p33geaux

@@ -2,14 +2,14 @@
  Testing nested calls
 ##
 
-package p37go
+package p37geaux
 func sum3(a int, b int, c int) int {
     return (a + b) + c;
 } // func sum3
 func main() {
-    print "Testing Program p37go", "\n";
+    print "Testing Program p37geaux", "\n";
     print "The grand sum is ",
         sum3(1, 2, sum3(3, 4, sum3(5, 6, sum3(7, 8, 9)))), "\n";
     print "Test completed", "\n";
 } // func main
-// package p37go
+// package p37geaux

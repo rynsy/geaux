@@ -2,9 +2,9 @@
  Test simple if-then and if-then-else
 ##
 
-package p06go
+package p06geaux
 func main() {
-    print "Testing program p06go\n";
+    print "Testing program p06geaux\n";
     if true {
         print "if-then statement works\n";
     }
@@ -22,4 +22,4 @@ func main() {
         print "if-then-else statement works\n";
     }
 } // func main
-// package p06go
+// package p06geaux

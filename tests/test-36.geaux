@@ -3,7 +3,7 @@
  FIXME: fails in semantics checking (disallows valid return expression)
 ##
 
-package p36go
+package p36geaux
 var cnt int;
 const lim = 15;
 func fib(n int) int {
@@ -14,7 +14,7 @@ func fib(n int) int {
     }
 } // func fib
 func main() {
-    print "Testing Program p36go", "\n";
+    print "Testing Program p36geaux", "\n";
     cnt = 0;
     for cnt <= lim {
         print "Fibonacci of ", cnt, " is ", fib(cnt), "\n";
@@ -22,4 +22,4 @@ func main() {
     } // for
     print "Test completed", "\n";
 } // func main
-// package p36go
+// package p36geaux

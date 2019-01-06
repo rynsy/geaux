@@ -2,7 +2,7 @@
  Check simple parameterless functions
 ##
 
-package p27go
+package p27geaux
 func proc1() int {
     print "\n", "Procedure 1 entered";
     print "\n", "Procedure 1 exited";
@@ -16,10 +16,10 @@ func proc2() bool {
 func main() {
     var x int;
     var y int;
-    print "Testing Program p27go", "\n";
+    print "Testing Program p27geaux", "\n";
     print proc1();
     print proc2();
     print "\n";
     print "Test completed", "\n";
 } // func main
-// package p27go
+// package p27geaux

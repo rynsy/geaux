@@ -2,10 +2,10 @@
     Testing declared variables in if/for blocks
 ##
 
-package p48go
+package p48geaux
 func main() {
     var a int = 9;
-    print "Testing Program p48go", "\n";
+    print "Testing Program p48geaux", "\n";
    
     if a == 9 {
         var b int = 10;
@@ -29,4 +29,4 @@ func main() {
 
     print "Test completed", "\n";
 } // func main
-// package p44go
+// package p44geaux

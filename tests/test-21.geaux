@@ -2,11 +2,11 @@
  Check control flow in a deeply nested loop
 ##
 
-package p21go
+package p21geaux
 func main() {
     var loopcount int;
     var flag bool;
-    print "Testing Program p21go\n";
+    print "Testing Program p21geaux\n";
     flag = true;
     loopcount = 0;
     for flag == true {
@@ -45,4 +45,4 @@ func main() {
     }
     print "Test completed\n";
 } // func main
-// package p21go
+// package p21geaux

@@ -3,7 +3,7 @@
     FIXME: fails in semantics checking (claims no return)
 ##
 
-package p32go
+package p32geaux
 var cnt int;
 func fac(n int) int {
     if n <= 1 {
@@ -13,7 +13,7 @@ func fac(n int) int {
     }
 } // func fac
 func main() {
-    print "Testing Program p32go", "\n";
+    print "Testing Program p32geaux", "\n";
     cnt = 1;
     for cnt <= 9 {
         print "Factorial of ", cnt, " is ", fac(cnt), "\n";
@@ -21,4 +21,4 @@ func main() {
     } // for
     print "Test completed", "\n";
 } // func main
-// package p32go
+// package p32geaux

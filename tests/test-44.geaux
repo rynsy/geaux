@@ -2,11 +2,11 @@
 	Tests break and continue statements and labelled while loops
 ##
 
-package p44go
+package p44geaux
 func main() {
     var a int;
     var b int;
-    print "Testing Program p44go", "\n";
+    print "Testing Program p44geaux", "\n";
     a = 0;
     loop1: for a < 10 {
         a = a + 1;
@@ -51,4 +51,4 @@ func main() {
     }
     print "Test completed", "\n";
 } // func main
-// package p44go
+// package p44geaux

@@ -4,7 +4,7 @@
   TODO: Fix test 29 fails in semantics checking (disallows global and local with same name): -2
 ##
 
-package p29go
+package p29geaux
 var x int;
 var y int;
 var z int;
@@ -17,7 +17,7 @@ func local1() {
     z = 10000;
 } // func local1
 func main() {
-    print "Testing Program p29go\n";
+    print "Testing Program p29geaux\n";
     x = 100;
     y = 200;
     z = ~1;
@@ -26,4 +26,4 @@ func main() {
     print " X = ", x, " Y = ", y, " Z = ", z, "\n";
     print "Test completed\n";
 } // func main
-// package p29go
+// package p29geaux

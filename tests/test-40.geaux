@@ -2,15 +2,15 @@
  Check that function return values are properly protected after return
 ##
 
-package p40go
+package p40geaux
 var x int;
 var y int;
 func echo(i int) int {
     return i;
 } // func echo
 func main() {
-    print "Testing Program p40go", "\n";
+    print "Testing Program p40geaux", "\n";
     print "1+2+3+4 = ", echo(1 + (echo(2) + (echo(3) + echo(4)))), "\n";
     print "Test completed", "\n";
 } // func main
-// package p40go
+// package p40geaux

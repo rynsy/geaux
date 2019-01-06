@@ -3,7 +3,7 @@
     FIXME: fails in semantics checking (disallows valid return expression)
 ##
 
-package p38go
+package p38geaux
 const dim = 8;
 var a1 int = 1;
 var b1 int = 2;
@@ -40,7 +40,7 @@ func compatible(x1 int, x2 int, y1 int, y2 int) bool {
     }
 } // func compatible
 func main() {
-    print "Testing Program p38go (8 queens problem)", "\n";
+    print "Testing Program p38geaux (8 queens problem)", "\n";
     a2 = 1;
     b2 = 1;
     c2 = 1;
@@ -147,4 +147,4 @@ func main() {
         h2 = 1;
     } // for
 } // func main
-// package p38go
+// package p38geaux

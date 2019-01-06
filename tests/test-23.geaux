@@ -2,12 +2,12 @@
  Check relational operators
 ##
 
-package p23go
+package p23geaux
 func main() {
     var i int;
     var j int;
     var b bool;
-    print "Testing Program p23go\n";
+    print "Testing Program p23geaux\n";
     i = 1;
     j = 2;
     b = true;
@@ -52,4 +52,4 @@ func main() {
     }
     print "Test completed\n";
 } // func main
-// package p23go
+// package p23geaux

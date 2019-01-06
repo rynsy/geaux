@@ -1,7 +1,7 @@
 ## Test 51
     Testing constants
 ##
-package p51go
+package p51geaux
 const aa = 1;
 
 func main() {
@@ -9,7 +9,7 @@ func main() {
     var a int;
     var b bool;
     var c char;
-    print "Testing Program p51go", "\n";
+    print "Testing Program p51geaux", "\n";
     print "a: ", a, "\n";
     print "aa: ", aa, "\n";
     a = aa;
@@ -30,4 +30,4 @@ func main() {
     print "bb / aa: ", bb / aa, "\n";
     print "Test completed", "\n";
 } // func main
-// package p51go
+// package p51geaux

@@ -2,12 +2,12 @@
     Testing assignment of character arrays
 ##
 
-package p47go
+package p47geaux
 func main() {
     var cA char[5];
     var cB char[5];
     var cC char[5];
-    print "Testing Program p47go", "\n";
+    print "Testing Program p47geaux", "\n";
     
     cA = "test1";
     cB = "test2";
@@ -35,4 +35,4 @@ func main() {
 
     print "Test completed", "\n";
 } // func main
-// package p44go
+// package p44geaux

@@ -2,10 +2,10 @@
   Checks for proper handling of cast operations.
 ##
 
-package p34go
+package p34geaux
 func main() {
     var d char;
-    print "Testing Program p34go\n";
+    print "Testing Program p34geaux\n";
     d = char(98 + 256);
     print "character should be b: ", d, '\n';
     print "should be 1: ", int(1), '\n';
@@ -15,4 +15,4 @@ func main() {
     print "should be 98: ", int('b'), '\n';
     print "Test completed\n";
 } // func main
-// package p34go
+// package p34geaux

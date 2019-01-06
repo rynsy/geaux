@@ -2,13 +2,13 @@
   Test simple while loops
 ##
 
-package p15go
+package p15geaux
 func main() {
     var i int = 0;
-    print "Testing program p15go\n";
+    print "Testing program p15geaux\n";
     for i < 100 {
 		i = i + 1;
     } // for
     print "The value of i is ", i, "\n";
 } // func main
-// package p15go
+// package p15geaux

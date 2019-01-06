@@ -2,7 +2,7 @@
  Test that parameters of caller can be properly accessed during a call
 ##
 
-package p42go
+package p42geaux
 func sum(i int, j int) int {
     return i + j;
 } // func sum
@@ -10,8 +10,8 @@ func plus1(k int) int {
     return sum(1, k);
 } // func plus1
 func main() {
-    print "Testing Program p42go", "\n";
+    print "Testing Program p42geaux", "\n";
     print "100+1 = ", plus1(100), "\n";
     print "Test completed", "\n";
 } // func main
-// package p42go
+// package p42geaux

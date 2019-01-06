@@ -3,9 +3,9 @@
    (which is used by all test programs)
 ##
 
-package p00go
+package p00geaux
 func main() {
-    print "Testing Program p00go\n";
+    print "Testing Program p00geaux\n";
     print "Test completed\n";
 } // func main
-// package p00go
+// package p00geaux

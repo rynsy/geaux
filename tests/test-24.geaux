@@ -2,11 +2,11 @@
   Test global arrays
 ##
 
-package p24go
+package p24geaux
 func main() {
     var i int[10];
     var b bool[2];
-    print "Testing program p24go\n";
+    print "Testing program p24geaux\n";
     i[0] = 1;
     i[1] = 10;
     i[2] = 100;
@@ -23,4 +23,4 @@ func main() {
     b[1] = true;
     print b[0], "\t", b[1], "\n";
 } // func main
-// package p24go
+// package p24geaux

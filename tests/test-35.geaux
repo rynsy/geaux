@@ -2,7 +2,7 @@
   Checks for proper working of array parameter.
 ##
 
-package p35go
+package p35geaux
 func recur(a []int, depth int) {
     if depth > 0 {
         print "depth is ", depth, '\n';
@@ -13,10 +13,10 @@ func recur(a []int, depth int) {
 } // func recur
 func main() {
     var myArray int[2];
-    print "Testing Program p35go\n";
+    print "Testing Program p35geaux\n";
     myArray[0] = 10;
     myArray[1] = 20;
     recur(myArray, 10);
     print "Test completed\n";
 } // func main
-// package p35go
+// package p35geaux
