@@ -5,7 +5,7 @@ LIBPATH = $(PROJDIR)/lib
 JFLEXPATH = $(LIBPATH)/jflex-full-1.7.0.jar
 JASMINPATH = $(LIBPATH)/jasmin-sable.jar
 CUPPATH = $(LIBPATH)/java-cup-10k.jar
-CLASSPATH = $(DESTPATH):$(CUPPATH)
+CLASSPATH = ./:$(DESTPATH):$(CUPPATH)
 JASMINCLASSPATH = $(JFLEXPATH):$(CUPPATH):$(JASMINPATH)
 JCFLAGS = -Xlint:all,-auxiliaryclass,-rawtypes -deprecation -classpath $(CLASSPATH) -d $(DESTPATH)
 JFLAGS = -classpath $(CLASSPATH)
@@ -38,7 +38,7 @@ jazz:
 test: all GeauxLib.class
 	java $(JFLAGS) Geaux $(TESTDIR)/test-$(TESTNUM).geaux
 	java $(JAZZFLAGS) jasmin.Main test.j
-	#java -classpath .:./classes p$(TESTNUM)go 
+	java $(JFLAGS) p$(TESTNUM)geaux
 	@echo
 
 testall: all GeauxLib.class
