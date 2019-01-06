@@ -1,4 +1,4 @@
-DESTPATH = ./classes
+DESTPATH = ../out/classes
 PROJDIR = /d/Home/Code/java/geaux
 LIBPATH = $(PROJDIR)/lib
 JFLEXPATH = $(LIBPATH)/jflex-full-1.7.0.jar

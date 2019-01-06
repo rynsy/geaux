@@ -1,60 +1,56 @@
 import java_cup.runtime.*;
 
-class CSXToken {
+class GeauxToken {
 	int linenum;
 	int colnum;
-	CSXToken(int line,int col) {
+	GeauxToken(int line,int col) {
 		linenum=line;colnum=col;
 	}
 }
 
-class CSXIntLitToken extends CSXToken {
+class GeauxIntLitToken extends GeauxToken {
 	int intValue;
-	CSXIntLitToken(int val,int line,int col) {
+	GeauxIntLitToken(int val,int line,int col) {
 	   super(line,col);intValue=val; 
 	};
 }
 
-class CSXIdentifierToken extends CSXToken {
+class GeauxIdentifierToken extends GeauxToken {
 	String identifierText;
-	CSXIdentifierToken(String text,int line,int col) {
+	GeauxIdentifierToken(String text,int line,int col) {
 		super(line,col);identifierText=text;
 	}
 }
 
-class CSXCharLitToken extends CSXToken {
+class GeauxCharLitToken extends GeauxToken {
 	char charValue;
-	CSXCharLitToken(char val,int line,int col) {
+	GeauxCharLitToken(char val,int line,int col) {
 		super(line,col);charValue=val;
 	}
 }
 
-class CSXStringLitToken extends CSXToken {
+class GeauxStringLitToken extends GeauxToken {
 	String stringText; // Full text of string literal,
                           //  including quotes & escapes
-	CSXStringLitToken(String text,int line,int col) {
+	GeauxStringLitToken(String text,int line,int col) {
 		super(line,col);
 		stringText=text;
 	}
 }
 
-class CSXInvalidToken extends CSXToken {
+class GeauxInvalidToken extends GeauxToken {
 	String tokenText; // Full text of token
-	CSXInvalidToken(String text,int line,int col) {
+	GeauxInvalidToken(String text,int line,int col) {
 		super(line,col);
 		tokenText=text;
 	}
 }
 
 class Pos {
-	static int  linenum = 1; /* maintain this as line number current
-                                 token was scanned on */
-	static int  colnum = 1; /* maintain this as column number current
-                                 token began at */
-	static int  line = 1; /* maintain this as line number after
-					scanning current token  */
-	static int  col = 1; /* maintain this as column number after
-					scanning current token  */
+	static int  linenum = 1; /* line number current token was scanned on */
+	static int  colnum = 1; /* column number current token began at */
+	static int  line = 1; /* line number after scanning current token  */
+	static int  col = 1; /* column number after scanning current token  */
 	static void setpos() { // set starting position for current token
 		linenum = line;
 		colnum = col;
@@ -68,8 +64,8 @@ class Pos {
  *
 class Symbol { 
 	public int sym;
-	public CSXToken value;
-	public Symbol(int tokenType, CSXToken theToken) {
+	public GeauxToken value;
+	public Symbol(int tokenType, GeauxToken theToken) {
 		sym = tokenType;
 		value = theToken;
 	}
@@ -107,7 +103,7 @@ MultiComment=#{2}(([#][^#])|[^#])*#{2}
 
 %type Symbol
 %eofval{
-  return new Symbol(sym.EOF, new CSXToken(0,0));
+  return new Symbol(sym.EOF, new GeauxToken(0,0));
 %eofval}
 
 %%
@@ -115,241 +111,241 @@ MultiComment=#{2}(([#][^#])|[^#])*#{2}
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_BOOL,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {BREAK} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_BREAK,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {CHAR} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_CHAR,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {CONST} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_CONST,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {CONTINUE} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_CONTINUE,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {ELSE} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_ELSE,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {FALSE} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_FALSE,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {FOR} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_FOR,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {FUNC} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_FUNC,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {IF} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_IF,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {INT} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_INT,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {PACKAGE} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_PACKAGE,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {PRINT} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_PRINT,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {READ} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_READ,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {RETURN} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_RETURN,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {TRUE} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_TRUE,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 {VAR} {
     Pos.setpos();
     Pos.col += yytext().length();
     return new Symbol(sym.rw_VAR,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "("	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.LPAREN,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 ")"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.RPAREN,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "["	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.LBRACKET,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "]"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.RBRACKET,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "="	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.ASG,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 ";"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.SEMI,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "+"	{
     Pos.setpos();
     Pos.col += 1;
     return new Symbol(sym.PLUS,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "-"	{
     Pos.setpos();
     Pos.col += 1;
     return new Symbol(sym.MINUS,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "*"	{
     Pos.setpos();
     Pos.col += 1;
     return new Symbol(sym.TIMES,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "/"	{
     Pos.setpos();
     Pos.col += 1;
     return new Symbol(sym.SLASH,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "=="	{
     Pos.setpos();
     Pos.col +=2;
     return new Symbol(sym.EQ, 
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "!="	{
     Pos.setpos();
     Pos.col +=2;
     return new Symbol(sym.NOTEQ, 
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "&&"	{
     Pos.setpos();
     Pos.col +=2;
     return new Symbol(sym.CAND,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "||"	{
     Pos.setpos();
     Pos.col +=2;
     return new Symbol(sym.COR, 
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "<"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.LT,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 ">"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.GT,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "<="	{
     Pos.setpos();
     Pos.col +=2;
     return new Symbol(sym.LEQ,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 ">="	{
     Pos.setpos();
     Pos.col +=2;
     return new Symbol(sym.GEQ,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 ","	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.COMMA,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "!"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.NOT,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "{"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.LBRACE,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 "}"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.RBRACE, 
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 ":"	{
     Pos.setpos();
     Pos.col +=1;
     return new Symbol(sym.COLON,
-        new CSXToken(Pos.linenum,Pos.colnum));
+        new GeauxToken(Pos.linenum,Pos.colnum));
 }
 \n	{
     Pos.setpos();
@@ -368,7 +364,7 @@ MultiComment=#{2}(([#][^#])|[^#])*#{2}
     Pos.setpos(); 
     Pos.col += yytext().length();
     return new Symbol(sym.IDENTIFIER,
-        new CSXIdentifierToken(yytext(), 
+        new GeauxIdentifierToken(yytext(), 
             Pos.linenum,Pos.colnum));
 }
 {IntLit}	{
@@ -394,7 +390,7 @@ MultiComment=#{2}(([#][^#])|[^#])*#{2}
         }
     }
     return new Symbol(sym.INTLIT,
-        new CSXIntLitToken(value,
+        new GeauxIntLitToken(value,
             Pos.linenum,Pos.colnum));
 }
 {CharLit} {
@@ -418,14 +414,14 @@ MultiComment=#{2}(([#][^#])|[^#])*#{2}
         c = yytext().charAt(1);
     }
     return new Symbol(sym.CHARLIT,
-        new CSXCharLitToken(c,
+        new GeauxCharLitToken(c,
             Pos.linenum,Pos.colnum));
 }
 {StrLit} {
     Pos.setpos(); 
     Pos.col += yytext().length();
     return new Symbol(sym.STRLIT,
-        new CSXStringLitToken(yytext().toString(),
+        new GeauxStringLitToken(yytext().toString(),
             Pos.linenum,Pos.colnum));
 }
 {SingleComment} {
@@ -449,6 +445,6 @@ MultiComment=#{2}(([#][^#])|[^#])*#{2}
 [^] {    
     Pos.setpos(); Pos.col += yytext().length();
     return new Symbol(sym.error,
-        new CSXInvalidToken(yytext().toString(), 
+        new GeauxInvalidToken(yytext().toString(), 
             Pos.linenum,Pos.colnum));
 }

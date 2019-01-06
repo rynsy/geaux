@@ -24,7 +24,7 @@ class Geaux {
     	}
 		Scanner.init(yyin); // Initialize Scanner class for parser
 		parser geauxParser = new parser();
-		System.out.println ("\n\n" + "CSX compilation of " + args[0]);
+		System.out.println ("\n\n" + "Geaux compilation of " + args[0]);
 		Symbol root=null;
 		try {
 			root = geauxParser.parse(); // do the parse

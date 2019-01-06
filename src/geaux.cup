@@ -1,16 +1,13 @@
 /***
- *
- * Specification for the CSXGo parser.
- *
+ * Specification for the Geaux parser.
  ***/
 
-/* Preliminaries to set up and use the scanner.  */
 import java_cup.runtime.*;
 parser code {:
  public void syntax_error(Symbol cur_token)
      {
- 	  report_error("CSX syntax error at line "+
-			String.valueOf(((CSXToken)cur_token.value).linenum),
+ 	  report_error("Geaux syntax error at line "+
+			String.valueOf(((GeauxToken)cur_token.value).linenum),
 			null);
      }
 :};
@@ -18,18 +15,18 @@ init with {:              :};
 scan with {: return Scanner.next_token(); :};
 
 /* Terminals (tokens returned by the scanner). */
-terminal CSXIdentifierToken     IDENTIFIER;
-terminal CSXStringLitToken      STRLIT;
-terminal CSXCharLitToken        CHARLIT;
-terminal CSXIntLitToken         INTLIT;
-terminal CSXToken               SEMI, LPAREN, RPAREN, ASG, LBRACE, RBRACE;
-terminal CSXToken               PLUS, MINUS, rw_IF, rw_ELSE, rw_BREAK;
-terminal CSXToken               rw_CONST, rw_CONTINUE, rw_BOOL, rw_FALSE;
-terminal CSXToken               rw_FUNC, rw_INT, rw_PACKAGE, rw_PRINT;
-terminal CSXToken               rw_RETURN, rw_CHAR, rw_FOR, rw_READ;
-terminal CSXToken               LBRACKET, RBRACKET, rw_TRUE, rw_VAR;
-terminal CSXToken               TIMES, SLASH, EQ, NOTEQ, CAND, COR, LT, GT;
-terminal CSXToken               LEQ, GEQ, COMMA, NOT, COLON;
+terminal GeauxIdentifierToken     IDENTIFIER;
+terminal GeauxStringLitToken      STRLIT;
+terminal GeauxCharLitToken        CHARLIT;
+terminal GeauxIntLitToken         INTLIT;
+terminal GeauxToken               SEMI, LPAREN, RPAREN, ASG, LBRACE, RBRACE;
+terminal GeauxToken               PLUS, MINUS, rw_IF, rw_ELSE, rw_BREAK;
+terminal GeauxToken               rw_CONST, rw_CONTINUE, rw_BOOL, rw_FALSE;
+terminal GeauxToken               rw_FUNC, rw_INT, rw_PACKAGE, rw_PRINT;
+terminal GeauxToken               rw_RETURN, rw_CHAR, rw_FOR, rw_READ;
+terminal GeauxToken               LBRACKET, RBRACKET, rw_TRUE, rw_VAR;
+terminal GeauxToken               TIMES, SLASH, EQ, NOTEQ, CAND, COR, LT, GT;
+terminal GeauxToken               LEQ, GEQ, COMMA, NOT, COLON;
 
 /* Non terminals */
 non terminal ProgramNode        program;
